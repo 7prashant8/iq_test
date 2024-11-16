@@ -1,0 +1,12 @@
+1. open Xampp
+2. open sql
+3. :C/xampp/htdocs/iq_test/ (there are 2 file iq.html , iq.php)
+4. start localhost/iq_test
+5. give the test
+6. open the table (iq_table) , and load the table 
+7. export the table into the (export -> quick -> format(csv) ->export) and save the table.
+8. open google colab
+9. add the csv file into drive .
+10. calculate the percentage
+11. classify the percentage as high iq, low iq and normal iq.
+12 show the output into graph and tabular format.

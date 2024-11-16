@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Form</title>
+<style>
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  #timer {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Quiz Form</h2>
+  
+  <div id="timer">00:00</div>
+  <form id="quizForm" action="iq.php" method="POST">
+    <div class="question">
+      <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" name="Name" required></td>
+        </tr>
+        <tr>
+            <td>Age: </td>
+            <td><input type="number" name="Age" required></td>
+        </tr>
+        <tr>
+            <td>Mobile: </td>
+            <td><input type="number" name="Mobile" required></td>
+        </tr>
+        <input type="hidden" name="TimeTaken" id="timeTakenInput">
+      </table>
+      
+      <p>LEVEL-I</p>
+      <p>Question 1: What is the next number in the sequence: 2, 4, 6, 8, ?</p>
+      <label>
+        <input type="radio" name="q1" value="10"> 10
+      </label>
+      <label>
+        <input type="radio" name="q1" value="12"> 12
+      </label>
+      <label>
+        <input type="radio" name="q1" value="14"> 14
+      </label>
+      <label>
+        <input type="radio" name="q1" value="16"> 16
+      </label>
+    </div>
+    <div class="question">
+      <p>Question 2: If a triangle has three sides measuring 3 cm, 4 cm, and 5 cm, what type of triangle is it?</p>
+      <label>
+        <input type="radio" name="q2" value="Isosceles"> Isosceles
+      </label>
+      <label>
+        <input type="radio" name="q2" value="Scalene"> Scalene
+      </label>
+      <label>
+        <input type="radio" name="q2" value="Equilateral"> Equilateral
+      </label>
+      <label>
+        <input type="radio" name="q2" value="NONE"> NONE
+      </label>
+    </div>
+    <div class="question">
+        <p>Question 3: How many sides does a hexagon have?</p>
+        <label>
+          <input type="radio" name="q3" value="4"> 4
+        </label>
+        <label>
+          <input type="radio" name="q3" value="5"> 5
+        </label>
+        <label>
+          <input type="radio" name="q3" value="6"> 6
+        </label>
+        <label>
+          <input type="radio" name="q3" value="7"> 7
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 4: Which planet is known as the "Red Planet"?</p>
+        <label>
+          <input type="radio" name="q4" value="Venus"> Venus
+        </label>
+        <label>
+          <input type="radio" name="q4" value="Mars"> Mars
+        </label>
+        <label>
+          <input type="radio" name="q4" value="Jupiter"> Jupiter
+        </label>
+        <label>
+          <input type="radio" name="q4" value="Mercury"> Mercury
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 5: If you have 5 apples and you give away 2, how many do you have left?</p>
+        <label>
+          <input type="radio" name="q5" value="0"> 0
+        </label>
+        <label>
+          <input type="radio" name="q5" value="1"> 1
+        </label>
+        <label>
+          <input type="radio" name="q5" value="2"> 2
+        </label>
+        <label>
+          <input type="radio" name="q5" value="3"> 3
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 6: What is the capital of France?</p>
+        <label>
+          <input type="radio" name="q6" value="Paris"> Paris
+        </label>
+        <label>
+          <input type="radio" name="q6" value="London"> London
+        </label>
+        <label>
+          <input type="radio" name="q6" value="Berlin"> Berlin
+        </label>
+        <label>
+          <input type="radio" name="q6" value="Delhi"> Delhi
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 7: What is the chemical symbol for water?</p>
+        <label>
+          <input type="radio" name="q7" value="Wa"> Wa
+        </label>
+        <label>
+          <input type="radio" name="q7" value="H2O"> H2O
+        </label>
+        <label>
+          <input type="radio" name="q7" value="H2"> H2
+        </label>
+        <label>
+          <input type="radio" name="q7" value="O2"> O2
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 8: How many continents are there in the world?</p>
+        <label>
+          <input type="radio" name="q8" value="5"> 5
+        </label>
+        <label>
+          <input type="radio" name="q8" value="6"> 6
+        </label>
+        <label>
+          <input type="radio" name="q8" value="7"> 7
+        </label>
+        <label>
+          <input type="radio" name="q8" value="8"> 8
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 9: What is the result of 7 + 3 × 2?</p>
+        <label>
+          <input type="radio" name="q9" value="18"> 18
+        </label>
+        <label>
+          <input type="radio" name="q9" value="13"> 13
+        </label>
+        <label>
+          <input type="radio" name="q9" value="16"> 16
+        </label>
+        <label>
+          <input type="radio" name="q9" value="23"> 23
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 10: How many letters are there in the English alphabet?</p>
+        <label>
+          <input type="radio" name="q10" value="24"> 24
+        </label>
+        <label>
+          <input type="radio" name="q10" value="26"> 26
+        </label>
+        <label>
+          <input type="radio" name="q10" value="28"> 28
+        </label>
+        <label>
+          <input type="radio" name="q10" value="30"> 30
+        </label>
+      </div>
+      <div class="question">
+        <p>LEVEL-II</p>
+      <p>Question 11: Which of the following is the closest synonym for "Ephemeral"?</p>
+      <label>
+        <input type="radio" name="q11" value="Lasting"> Lasting
+      </label>
+      <label>
+        <input type="radio" name="q11" value="Permanent"> Permanent
+      </label>
+      <label>
+        <input type="radio" name="q11" value="Fleeting"> Fleeting
+      </label>
+      <label>
+        <input type="radio" name="q11" value="Enduring"> Enduring
+      </label>
+    </div>
+    <div class="question">
+        <p>Question 12: What is the square root of 144?</p>
+        <label>
+          <input type="radio" name="q12" value="10"> 10
+        </label>
+        <label>
+          <input type="radio" name="q12" value="12"> 12
+        </label>
+        <label>
+          <input type="radio" name="q12" value="14"> 14
+        </label>
+        <label>
+          <input type="radio" name="q12" value="16"> 16
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 13: Which of the following is a prime number? </p>
+        <label>
+          <input type="radio" name="q13" value="12"> 12
+        </label>
+        <label>
+          <input type="radio" name="q13" value="15"> 15
+        </label>
+        <label>
+          <input type="radio" name="q13" value="17"> 17
+        </label>
+        <label>
+          <input type="radio" name="q13" value="21"> 21
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 14: If a quarter past two is 2:15, what is a quarter to three?</p>
+        <label>
+          <input type="radio" name="q14" value="2:30"> 2:30
+        </label>
+        <label>
+          <input type="radio" name="q14" value="3:00"> 3:00
+        </label>
+        <label>
+          <input type="radio" name="q14" value="3:15"> 3:15
+        </label>
+        <label>
+          <input type="radio" name="q14" value="2:45"> 2:45
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 15: What is the capital of Australia? </p>
+        <label>
+          <input type="radio" name="q15" value="Sydney"> Sydney
+        </label>
+        <label>
+          <input type="radio" name="q15" value="Melbourne"> Melbourne
+        </label>
+        <label>
+          <input type="radio" name="q15" value="Canberra"> Canberra
+        </label>
+        <label>
+          <input type="radio" name="q15" value="Brisbane"> Brisbane
+        </label>
+      </div>
+      
+      <div class="question">
+        <p>Question 16: Who wrote the famous play "Romeo and Juliet"?</p>
+        <label>
+          <input type="radio" name="q16" value="William_Shakespeare"> William_Shakespeare
+        </label>
+        <label>
+          <input type="radio" name="q16" value="Jane_Austen"> Jane_Austen
+        </label>
+        <label>
+          <input type="radio" name="q16" value="Charles_Dickens"> Charles_Dickens
+        </label>
+        <label>
+          <input type="radio" name="q16" value="Mark_Twain"> Mark_Twain
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 17: Which planet is the largest in the solar system? </p>
+        <label>
+          <input type="radio" name="q17" value="Mercury"> Mercury
+        </label>
+        <label>
+          <input type="radio" name="q17" value="Venus"> Venus
+        </label>
+        <label>
+          <input type="radio" name="q17" value="Earth"> Earth
+        </label>
+        <label>
+          <input type="radio" name="q17" value="Jupiter"> Jupiter
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 18: What is the chemical symbol for gold? </p>
+        <label>
+          <input type="radio" name="q18" value="Au"> Au
+        </label>
+        <label>
+          <input type="radio" name="q18" value="Ag"> Ag
+        </label>
+        <label>
+          <input type="radio" name="q18" value="Cu"> Cu
+        </label>
+        <label>
+          <input type="radio" name="q18" value="Fe"> Fe
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 19: What is the boiling point of water in Fahrenheit?</p>
+        <label>
+          <input type="radio" name="q19" value="100 F"> 100 F
+        </label>
+        <label>
+          <input type="radio" name="q19" value="212 F"> 212 F
+        </label>
+        <label>
+          <input type="radio" name="q19" value="273 F"> 273 F
+        </label>
+        <label>
+          <input type="radio" name="q19" value="360 F"> 360 F
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 20: Which of the following words is spelled incorrectly?</p>
+        <label>
+          <input type="radio" name="q20" value="Accidentally"> Accidentally
+        </label>
+        <label>
+          <input type="radio" name="q20" value="Rhythm"> Rhythm
+        </label>
+        <label>
+          <input type="radio" name="q20" value="Occasion"> Occasion
+        </label>
+        <label>
+          <input type="radio" name="q20" value="Bureaucracy"> Bureaucracy
+        </label>
+      </div>
+    <div class="question">
+        <p>LEVEL-III</p>
+      <p>Question 21: What is the next number in the sequence: 3, 6, 12, 24, ?</p>
+      <label>
+        <input type="radio" name="q21" value="36"> 36
+      </label>
+      <label>
+        <input type="radio" name="q21" value="42"> 42
+      </label>
+      <label>
+        <input type="radio" name="q21" value="48"> 48
+      </label>
+      <label>
+        <input type="radio" name="q21" value="56"> 56
+      </label>
+    </div>
+    <div class="question">
+        <p>Question 22: If 6 apples cost $3, how much do 10 apples cost?</p>
+        <label>
+          <input type="radio" name="q22" value="$4"> $4
+        </label>
+        <label>
+          <input type="radio" name="q22" value="$5"> $5
+        </label>
+        <label>
+          <input type="radio" name="q22" value="$6"> $6
+        </label>
+        <label>
+          <input type="radio" name="q22" value="$7"> $7
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 23: A snail climbs 5 feet up a wall during the day and slips down 4 feet during the night. If the wall is 30 feet tall, how many days will it take for the snail to reach the top?</p>
+        <label>
+          <input type="radio" name="q23" value="25"> 25
+        </label>
+        <label>
+          <input type="radio" name="q23" value="26"> 26
+        </label>
+        <label>
+          <input type="radio" name="q23" value="27"> 27
+        </label>
+        <label>
+          <input type="radio" name="q23" value="28"> 28
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 24: If all roses are flowers and some flowers fade quickly, then can we conclude that some roses fade quickly?</p>
+        <label>
+          <input type="radio" name="q24" value="yes"> yes
+        </label>
+        <label>
+          <input type="radio" name="q24" value="no"> no
+        </label>
+        <label>
+          <input type="radio" name="q24" value="maybe"> maybe
+        </label>
+        <label>
+          <input type="radio" name="q24" value="can't_predict"> can't_predict
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 25: If 5 friends share a pizza equally and each person eats 2 slices, how many pizzas were eaten?(cdr 1pizza= 4 slices)</p>
+        <label>
+          <input type="radio" name="q25" value="1"> 1
+        </label>
+        <label>
+          <input type="radio" name="q25" value="1.5"> 1.5
+        </label>
+        <label>
+          <input type="radio" name="q25" value="2"> 2
+        </label>
+        <label>
+          <input type="radio" name="q25" value="2.5"> 2.5
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 26: A boat travels downstream 20 miles in 2 hours. If it travels upstream the same distance, how long will it take? </p>
+        <label>
+          <input type="radio" name="q26" value="1_hour"> 1_hour
+        </label>
+        <label>
+          <input type="radio" name="q26" value="2_hour"> 2_hour
+        </label>
+        <label>
+          <input type="radio" name="q26" value="3_hour"> 3_hour
+        </label>
+        <label>
+          <input type="radio" name="q26" value="2.5_hour"> 2.5_hour
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 27: What number is represented by the following Roman numeral: LXXVIII?</p>
+        <label>
+          <input type="radio" name="q27" value="58"> 58
+        </label>
+        <label>
+          <input type="radio" name="q27" value="68"> 68
+        </label>
+        <label>
+          <input type="radio" name="q27" value="78"> 78
+        </label>
+        <label>
+          <input type="radio" name="q27" value="88"> 88
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 28: If A = 1, B = 2, C = 3, ..., Z = 26, what is the value of the word "WATER"?</p>
+        <label>
+          <input type="radio" name="q28" value="56"> 56
+        </label>
+        <label>
+          <input type="radio" name="q28" value="67"> 67
+        </label>
+        <label>
+          <input type="radio" name="q28" value="71"> 71
+        </label>
+        <label>
+          <input type="radio" name="q28" value="77"> 77
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 29: If 3 cats catch 3 mice in 3 minutes, how many cats are needed to catch 100 mice in 100 minutes?</p>
+        <label>
+          <input type="radio" name="q29" value="1"> 1
+        </label>
+        <label>
+          <input type="radio" name="q29" value="3"> 3
+        </label>
+        <label>
+          <input type="radio" name="q29" value="10"> 10
+        </label>
+        <label>
+          <input type="radio" name="q29" value="100"> 100
+        </label>
+      </div>
+      <div class="question">
+        <p>Question 30: A clock strikes once at 1 o'clock, twice at 2 o'clock, thrice at 3 o'clock, and so on. How many times does it strike in 24 hours?</p>
+        <label>
+          <input type="radio" name="q30" value="78"> 78
+        </label>
+        <label>
+          <input type="radio" name="q30" value="156"> 156
+        </label>
+        <label>
+          <input type="radio" name="q30" value="180"> 180
+        </label>
+        <label>
+          <input type="radio" name="q30" value="324"> 324
+        </label>
+      </div>
+      
+   <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  // Timer
+  var timer;
+  var time = 0;
+
+  function startTimer() {
+    timer = setInterval(updateTimer, 1000);
+  }
+
+  function updateTimer() {
+    time++;
+    var minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+    document.getElementById('timer').innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+
+  // Start timer when the page loads
+  startTimer();
+
+  // Stop timer when the form is submitted
+  document.getElementById('quizForm').addEventListener('submit', function(event) {
+    stopTimer();
+    document.getElementById('timeTakenInput').value = time;
+  });
+</script>
+</body>
+</html>
